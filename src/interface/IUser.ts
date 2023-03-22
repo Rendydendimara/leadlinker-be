@@ -10,5 +10,7 @@ export interface IUser {
   isDeleted: boolean;
   deletedAt: Date | null;
   updatedAt: Date | null;
+  otpResetPassword: string | null;
+  createOtpResetPasswordAt: Date | null;
   isValidPassword: (password: string) => Promise<boolean>;
 }

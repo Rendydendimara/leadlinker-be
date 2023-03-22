@@ -44,7 +44,7 @@ const BusinessOwnerSchema: Schema<BusinessOwnerDocument> = new Schema({
     },
   },
   personal: {
-    companyName: {
+    nickname: {
       type: String,
       default: null,
     },

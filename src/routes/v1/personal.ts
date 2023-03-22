@@ -7,6 +7,6 @@ import {
 const personalRouter = express.Router();
 
 personalRouter.post('/create', CreatePersonalController);
-personalRouter.post('/get', GetPersonalByIdSlugController);
+personalRouter.post('/get-detail', GetPersonalByIdSlugController);
 
 export default personalRouter;

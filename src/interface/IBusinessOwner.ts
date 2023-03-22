@@ -12,7 +12,7 @@ export interface IBusinessOwner {
     companyAbout: string;
   };
   personal: {
-    companyName: string;
+    nickname: string;
     fullname: string;
     hobbies: string;
     interest: string;

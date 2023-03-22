@@ -14,7 +14,7 @@ export const CreateBusinessOwnerUseCase = async (
       companyAbout: string;
     };
     personal: {
-      companyName: string;
+      nickname: string;
       fullname: string;
       hobbies: string;
       interest: string;
@@ -58,7 +58,7 @@ export const CreateBusinessOwnerUseCase = async (
         companyAbout: payload.business.companyAbout,
       },
       personal: {
-        companyName: payload.personal.companyName,
+        nickname: payload.personal.nickname,
         fullname: payload.personal.fullname,
         hobbies: payload.personal.hobbies,
         interest: payload.personal.interest,
@@ -102,15 +102,24 @@ export const GetBusinessOwnerByIdSlugUserUseCase = async (
     if (payload.type === 'by-user') {
       businessOwner = await BusinessOwner.findOne({
         user: new mongoose.Types.ObjectId(payload.id),
-      }).populate('user');
+      }).populate({
+        path: 'user',
+        select: 'email username',
+      });
     } else if (payload.type === 'by-id') {
       businessOwner = await BusinessOwner.findOne({
         _id: new mongoose.Types.ObjectId(payload.id),
-      }).populate('user');
+      }).populate({
+        path: 'user',
+        select: 'email username',
+      });
     } else if (payload.type === 'by-slug') {
       businessOwner = await BusinessOwner.findOne({
         slug: payload.id,
-      }).populate('user');
+      }).populate({
+        path: 'user',
+        select: 'email username',
+      });
     }
 
     if (!businessOwner) {

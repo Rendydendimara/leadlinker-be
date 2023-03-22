@@ -60,7 +60,7 @@ export const CreatePersonalUseCase = async (
     return res.send({
       success: true,
       data: newPersonal,
-      message: 'Success create personal',
+      message: 'Success create profesional',
     });
   } catch (e) {
     next(e);
@@ -80,22 +80,31 @@ export const GetPersonalByIdSlugUserUseCase = async (
     if (payload.type === 'by-user') {
       personal = await Personal.findOne({
         user: new mongoose.Types.ObjectId(payload.id),
-      }).populate('user');
+      }).populate({
+        path: 'user',
+        select: 'email username',
+      });
     } else if (payload.type === 'by-id') {
       personal = await Personal.findOne({
         _id: new mongoose.Types.ObjectId(payload.id),
-      }).populate('user');
+      }).populate({
+        path: 'user',
+        select: 'email username',
+      });
     } else if (payload.type === 'by-slug') {
       personal = await Personal.findOne({
         slug: payload.id,
-      }).populate('user');
+      }).populate({
+        path: 'user',
+        select: 'email username',
+      });
     }
 
     if (!personal) {
       return res.status(404).send({
         success: false,
         data: null,
-        message: 'Personal not found',
+        message: 'Profesional not found',
       });
     }
 

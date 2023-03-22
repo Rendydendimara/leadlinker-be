@@ -34,6 +34,14 @@ const UserSchema: Schema<UserDocument> = new Schema({
     type: String,
     required: true,
   },
+  otpResetPassword: {
+    type: String,
+    default: null,
+  },
+  createOtpResetPasswordAt: {
+    type: Date,
+    default: null,
+  },
   createdAt: {
     type: Date,
     default: new Date(),

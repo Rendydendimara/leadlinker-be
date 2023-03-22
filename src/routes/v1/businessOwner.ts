@@ -7,6 +7,6 @@ import {
 const businessOwnerRouter = express.Router();
 
 businessOwnerRouter.post('/create', CreateBusinessOwnerController);
-businessOwnerRouter.post('/get', GetBusinessOwnerByIdSlugUserController);
+businessOwnerRouter.post('/get-detail', GetBusinessOwnerByIdSlugUserController);
 
 export default businessOwnerRouter;

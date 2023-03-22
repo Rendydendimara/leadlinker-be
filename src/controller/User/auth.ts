@@ -4,6 +4,8 @@ import {
   loginUseCase,
   logoutUserUseCase,
   registerUserUseCase,
+  sendOTPForgotPasswordUseCase,
+  verifyResetPasswordUseCase,
 } from '../../repositories/User/Auth';
 
 export const registerUserController = async (
@@ -81,6 +83,50 @@ export const logoutUserController = async (
       });
     }
     await logoutUserUseCase(userId, res, next);
+  } catch (err) {
+    next(err);
+  }
+};
+
+export const verifyResetPasswordController = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const { userId, password, otpResetPassword } = req.body;
+    if (!(userId && password && otpResetPassword)) {
+      return res.status(400).send({
+        success: false,
+        data: null,
+        message: 'Semua data diperlukan',
+      });
+    }
+    await verifyResetPasswordUseCase(
+      { userId, password, otpResetPassword },
+      res,
+      next
+    );
+  } catch (err) {
+    next(err);
+  }
+};
+
+export const sendOTPForgotPasswordController = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const { email } = req.body;
+    if (!email) {
+      return res.status(400).send({
+        success: false,
+        data: null,
+        message: 'Semua data diperlukan',
+      });
+    }
+    await sendOTPForgotPasswordUseCase(email, res, next);
   } catch (err) {
     next(err);
   }

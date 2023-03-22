@@ -99,7 +99,7 @@ app.use(
 );
 
 // Listen
-const port = normalizePort(config.PORT || '8080');
+const port = normalizePort(config.PORT || '8084');
 // app.set('port', port);
 console.log('process.env.NODE_ENV', process.env.NODE_ENV);
 if (config.NODE_ENV === 'development') {
