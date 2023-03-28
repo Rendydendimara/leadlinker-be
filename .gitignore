@@ -50,6 +50,6 @@ uploads
 # Other
 .csv
 
-config.env
-.config.env
-*.env
+# config.env
+# .config.env
+# *.env
