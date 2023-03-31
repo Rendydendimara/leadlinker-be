@@ -12,14 +12,16 @@ export interface IBusinessOwner {
     companyAbout: string;
   };
   personal: {
-    nickname: string;
-    fullname: string;
-    hobbies: string;
+    homeCity: string;
+    aboutMeDontKnow: string;
+    skillNotShow: string;
+    kids: string;
     interest: string[];
   };
   miscellaneous: {
     burningDesire: string;
-    noOneKnowAboutMe: string;
+    favoritesSuperhero: string;
+    representYou: string;
     keySuccess: string;
   };
   network: {

@@ -14,14 +14,16 @@ export const CreateBusinessOwnerUseCase = async (
       companyAbout: string;
     };
     personal: {
-      nickname: string;
-      fullname: string;
-      hobbies: string;
+      homeCity: string;
+      aboutMeDontKnow: string;
+      skillNotShow: string;
+      kids: string;
       interest: string[];
     };
     miscellaneous: {
       burningDesire: string;
-      noOneKnowAboutMe: string;
+      favoritesSuperhero: string;
+      representYou: string;
       keySuccess: string;
     };
     network: {
@@ -59,14 +61,16 @@ export const CreateBusinessOwnerUseCase = async (
         companyAbout: payload.business.companyAbout,
       },
       personal: {
-        nickname: payload.personal.nickname,
-        fullname: payload.personal.fullname,
-        hobbies: payload.personal.hobbies,
+        homeCity: payload.personal.homeCity,
+        aboutMeDontKnow: payload.personal.aboutMeDontKnow,
+        skillNotShow: payload.personal.skillNotShow,
+        kids: payload.personal.kids,
         interest: payload.personal.interest,
       },
       miscellaneous: {
         burningDesire: payload.miscellaneous.burningDesire,
-        noOneKnowAboutMe: payload.miscellaneous.noOneKnowAboutMe,
+        favoritesSuperhero: payload.miscellaneous.favoritesSuperhero,
+        representYou: payload.miscellaneous.representYou,
         keySuccess: payload.miscellaneous.keySuccess,
       },
       network: {

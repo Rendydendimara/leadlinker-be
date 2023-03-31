@@ -6,9 +6,9 @@ export interface IPersonal {
   fullname: string;
   slug: string;
   title1: string;
-  title2: string;
+  previousWorking: string;
   expertise: string;
-  passion: string;
+  confident: string;
   goal: string;
   noTelfon: string;
   user: {
@@ -21,4 +21,10 @@ export interface IPersonal {
   isDeleted: boolean;
   deletedAt: Date | null;
   updatedAt: Date | null;
+  skillNotShowed: string;
+  spareTime: string;
+  iLike: string;
+  iDontLike: string;
+  notPeopleKnowYou: string;
+  reactOutYou: string;
 }

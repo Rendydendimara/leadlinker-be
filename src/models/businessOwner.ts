@@ -44,15 +44,19 @@ const BusinessOwnerSchema: Schema<BusinessOwnerDocument> = new Schema({
     },
   },
   personal: {
-    nickname: {
+    homeCity: {
       type: String,
       default: null,
     },
-    fullname: {
+    aboutMeDontKnow: {
       type: String,
       default: null,
     },
-    hobbies: {
+    skillNotShow: {
+      type: String,
+      default: null,
+    },
+    kids: {
       type: String,
       default: null,
     },
@@ -66,7 +70,11 @@ const BusinessOwnerSchema: Schema<BusinessOwnerDocument> = new Schema({
       type: String,
       default: null,
     },
-    noOneKnowAboutMe: {
+    favoritesSuperhero: {
+      type: String,
+      default: null,
+    },
+    representYou: {
       type: String,
       default: null,
     },

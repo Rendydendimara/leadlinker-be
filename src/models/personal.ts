@@ -29,7 +29,7 @@ const PersonalSchema: Schema<PersonalDocument> = new Schema({
     type: String,
     default: null,
   },
-  title2: {
+  previousWorking: {
     type: String,
     default: null,
   },
@@ -37,7 +37,7 @@ const PersonalSchema: Schema<PersonalDocument> = new Schema({
     type: String,
     default: null,
   },
-  passion: {
+  confident: {
     type: String,
     default: null,
   },
@@ -73,6 +73,30 @@ const PersonalSchema: Schema<PersonalDocument> = new Schema({
   isDeleted: {
     type: Boolean,
     default: false,
+  },
+  skillNotShowed: {
+    type: String,
+    default: null,
+  },
+  spareTime: {
+    type: String,
+    default: null,
+  },
+  iLike: {
+    type: String,
+    default: null,
+  },
+  iDontLike: {
+    type: String,
+    default: null,
+  },
+  notPeopleKnowYou: {
+    type: String,
+    default: null,
+  },
+  reactOutYou: {
+    type: String,
+    default: null,
   },
 });
 

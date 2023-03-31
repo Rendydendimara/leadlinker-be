@@ -5,15 +5,21 @@ import { toSnakeCaseString } from '../../utils/string';
 
 export const CreatePersonalUseCase = async (
   payload: {
+    userId: string;
     nickname: string;
     fullname: string;
     title1: string;
-    title2: string;
+    previousWorking: string;
+    confident: string;
+    skillNotShowed: string;
+    spareTime: string;
+    iLike: string;
+    iDontLike: string;
     expertise: string;
-    passion: string;
+    notPeopleKnowYou: string;
+    reactOutYou: string;
     goal: string;
     noTelfon: string;
-    userId: string;
     background: string;
   },
   res: Response,
@@ -49,11 +55,17 @@ export const CreatePersonalUseCase = async (
       nickname: payload.nickname,
       fullname: payload.fullname,
       title1: payload.title1,
-      title2: payload.title2,
+      previousWorking: payload.previousWorking,
       expertise: payload.expertise,
-      passion: payload.passion,
+      confident: payload.confident,
       goal: payload.goal,
       background: payload.background,
+      skillNotShowed: payload.skillNotShowed,
+      spareTime: payload.spareTime,
+      iLike: payload.iLike,
+      iDontLike: payload.iDontLike,
+      notPeopleKnowYou: payload.notPeopleKnowYou,
+      reactOutYou: payload.reactOutYou,
       noTelfon: payload.noTelfon,
       user: new mongoose.Types.ObjectId(payload.userId),
       slug: toSnakeCaseString(payload.nickname),
