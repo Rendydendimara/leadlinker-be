@@ -15,7 +15,7 @@ export interface IBusinessOwner {
     nickname: string;
     fullname: string;
     hobbies: string;
-    interest: string;
+    interest: string[];
   };
   miscellaneous: {
     burningDesire: string;
@@ -34,6 +34,7 @@ export interface IBusinessOwner {
     ref: 'User';
     required: true;
   };
+  background: string | null;
   createdAt: Date;
   isDeleted: boolean;
   deletedAt: Date | null;

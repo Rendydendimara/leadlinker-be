@@ -54,6 +54,10 @@ const PersonalSchema: Schema<PersonalDocument> = new Schema({
     ref: 'User',
     default: null,
   },
+  background: {
+    type: String,
+    default: null,
+  },
   createdAt: {
     type: Date,
     default: new Date(),

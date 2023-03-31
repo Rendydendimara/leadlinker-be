@@ -17,6 +17,7 @@ export interface IPersonal {
     required: true;
   };
   createdAt: Date;
+  background: string | null;
   isDeleted: boolean;
   deletedAt: Date | null;
   updatedAt: Date | null;

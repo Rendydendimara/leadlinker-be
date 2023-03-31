@@ -14,6 +14,7 @@ export const CreatePersonalUseCase = async (
     goal: string;
     noTelfon: string;
     userId: string;
+    background: string;
   },
   res: Response,
   next: NextFunction
@@ -52,6 +53,7 @@ export const CreatePersonalUseCase = async (
       expertise: payload.expertise,
       passion: payload.passion,
       goal: payload.goal,
+      background: payload.background,
       noTelfon: payload.noTelfon,
       user: new mongoose.Types.ObjectId(payload.userId),
       slug: toSnakeCaseString(payload.nickname),

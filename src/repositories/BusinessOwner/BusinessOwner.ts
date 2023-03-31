@@ -17,7 +17,7 @@ export const CreateBusinessOwnerUseCase = async (
       nickname: string;
       fullname: string;
       hobbies: string;
-      interest: string;
+      interest: string[];
     };
     miscellaneous: {
       burningDesire: string;
@@ -31,6 +31,7 @@ export const CreateBusinessOwnerUseCase = async (
       network: string;
       skill: string;
     };
+    background: string;
     userId: string;
   },
   res: Response,
@@ -75,6 +76,7 @@ export const CreateBusinessOwnerUseCase = async (
         network: payload.network.network,
         skill: payload.network.skill,
       },
+      background: payload.background,
       user: new mongoose.Types.ObjectId(payload.userId),
       slug: toSnakeCaseString(payload.business.companyName),
     });

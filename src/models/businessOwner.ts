@@ -57,7 +57,7 @@ const BusinessOwnerSchema: Schema<BusinessOwnerDocument> = new Schema({
       default: null,
     },
     interest: {
-      type: String,
+      type: [String],
       default: null,
     },
   },
@@ -117,6 +117,10 @@ const BusinessOwnerSchema: Schema<BusinessOwnerDocument> = new Schema({
   isDeleted: {
     type: Boolean,
     default: false,
+  },
+  background: {
+    type: String,
+    default: null,
   },
 });
 
